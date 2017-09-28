@@ -8,13 +8,24 @@
             controllerAs: 'gridComponent'
     });
 
-    function GridComponent(){
+    GridComponent.$inject = ['usuarioService'];
+
+    function GridComponent(usuarioService){
         var vm = this;
 
-        vm.usuarios = [{"nome":"Marcos", "sobrenome": "Pinho", "login": "MarcosPinho"},
-            {"nome":"Joao", "sobrenome": "Almeida", "login": "Joaozinho"},
-            {"nome":"Fernanda", "sobrenome": "Machado", "login": "Nanda"},
-            {"nome":"Sabrina", "sobrenome": "Cartaxo", "login": "Linda"}];
+        vm.$onInit = function(){
+            usuarioService.findAll().then(findAllSucess).catch(findAllFailed);
+        };
+
+        function findAllSucess(response){
+            vm.usuarios = response.data;
+        }
+
+        function findAllFailed(response){
+            alert('Erro na listagem dos usuarios: ' + '\n\nVerbo HTTP: '+ response.config.method
+                + '\nUrl consumida: ' + response.config.url
+                + '\nStatus: ' + response.xhrStatus);//TODO substituir quando estiver o toast
+        }
 
     }
 
