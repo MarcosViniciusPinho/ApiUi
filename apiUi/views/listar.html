@@ -1,0 +1,25 @@
+<div class="posicionar">
+    <div class="row">
+        <a class="btn pulse grey lighten-1">Novo</a>
+    </div>
+    <div class="row">
+        <table class="centered hoverable responsive-table striped border">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>SobreNome</th>
+                    <th>Login</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="usuario in gridComponent.usuarios">
+                    <td>{{usuario.nome}}</td>
+                    <td>{{usuario.sobrenome}}</td>
+                    <td>{{usuario.login}}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

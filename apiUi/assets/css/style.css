@@ -1,0 +1,19 @@
+table.hoverable tbody tr:hover {
+    background-color: #fdfd00;
+}
+
+table.border {
+    border-collapse: collapse;
+}
+
+table.border tr td {
+    border:1px solid #d0d0d0;
+}
+
+table.border thead th{
+    border:1px solid #d0d0d0;
+}
+
+div.posicionar{
+    padding: 20px;
+}
