@@ -3,21 +3,13 @@
 <head>
     <title>Inicio</title>
 
-    <!-- Materialize CSS -->
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">-->
-
-    <!-- JavaScript for: jQuery, angular, materialize, and angular-materialize. All of which are needed. -->
-    <!--<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>-->
-    <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>-->
-    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>-->
-    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.2/angular-materialize.min.js"></script>-->
-
     <!--Dependencias necessarias para o projeto-->
     <link rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.min.css" type="text/css"/>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
     <script src="node_modules/angular-materialize/src/angular-materialize.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
 
     <!--Customizações do layout da aplicação-->
     <link rel="stylesheet" href="apiUi/assets/css/style.css" type="text/css"/>
@@ -25,31 +17,27 @@
     <!--Module-->
     <script src="apiUi/assets/js/modulo.js"></script>
 
+    <!--Router-->
+    <script src="apiUi/assets/js/router.js"></script>
+
     <!--Services-->
     <script src="apiUi/assets/js/services/usuarioService.js"></script>
 
     <!--Components-->
     <script src="apiUi/assets/js/components/gridComponent.js"></script>
 
+    <!--Controllers-->
+    <script src="apiUi/assets/js/controllers/usuarioController.js"></script>
+
 </head>
 
 <body>
 
     <api-ui-grid-component></api-ui-grid-component>
-
-    <!--Protótipos para o formulario-->
-    <!--<div class="container">-->
-        <!--<div class="row">-->
-            <!--<div input-field>-->
-                <!--<input type="text" ng-model="dummyInputs.inputFieldInput" length="150">-->
-                <!--<label>Input label</label>-->
-            <!--</div>-->
-            <!--<div input-field>-->
-                <!--<textarea ng-model="dummyInputs.textAreaInput" class="materialize-textarea"></textarea>-->
-                <!--<label>Textarea</label>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-
+    <div class="jumbotron">
+        <div class="container">
+            <div ng-view=""></div>
+        </div>
+    </div>
 </body>
 </html>

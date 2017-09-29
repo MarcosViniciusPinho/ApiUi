@@ -1,1 +1,1 @@
-angular.module('apiUi', ['ui.materialize']);
+angular.module('apiUi', ['ui.materialize', 'ngRoute']);
