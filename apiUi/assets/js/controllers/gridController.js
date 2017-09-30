@@ -10,7 +10,7 @@ function GridController(usuarioService, $location) {
 
     vm.edit = function(usuario){
         usuarioService.setUsuario(usuario);
-        $location.path('/novo');
+        $location.path('/cadastro');
     };
 
     function listar() {

@@ -5,7 +5,7 @@
         .config(RouterConfig);
 
     function RouterConfig($routeProvider){
-        $routeProvider.when('/novo', {
+        $routeProvider.when('/cadastro', {
             templateUrl : 'apiUi/views/form.html',
             controller: UsuarioController,
             controllerAs: 'usuarioCtrl'
