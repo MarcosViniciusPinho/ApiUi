@@ -16,9 +16,17 @@
             return $http.get(recurso);
         };
 
-        vm.save = function(usuario){
-            return $http.post(recurso, usuario);
+        vm.saveOrUpdate = function(usuario){
+          return usuario.id != null ? update(usuario) : save(usuario);
         };
+
+        function save(usuario){
+            return $http.post(recurso, usuario);
+        }
+
+        function update(usuario){
+            return $http.put(recurso, usuario);
+        }
 
         vm.setUsuario = function(usuario){
             vm.usuario = usuario;

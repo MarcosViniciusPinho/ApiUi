@@ -25,7 +25,7 @@ function UsuarioController(usuarioService, $location) {
     }
 
     vm.save = function () {
-        usuarioService.save(vm.usuario)
+        usuarioService.saveOrUpdate(vm.usuario)
             .then(saveSucess).catch(saveFailed);
     };
 
