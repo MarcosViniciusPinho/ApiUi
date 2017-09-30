@@ -20,5 +20,13 @@
             return $http.post(recurso, usuario);
         };
 
+        vm.setUsuario = function(usuario){
+            vm.usuario = usuario;
+        };
+
+        vm.getUsuario = function(){
+            return vm.usuario;
+        };
+
     }
 })();

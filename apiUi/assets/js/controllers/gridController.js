@@ -1,12 +1,17 @@
 angular.module('apiUi')
     .controller('gridCtrl', GridController);
 
-GridController.$inject = ['usuarioService'];
+GridController.$inject = ['usuarioService', '$location'];
 
-function GridController(usuarioService) {
+function GridController(usuarioService, $location) {
     var vm = this;
 
     listar();
+
+    vm.edit = function(usuario){
+        usuarioService.setUsuario(usuario);
+        $location.path('/novo');
+    };
 
     function listar() {
         usuarioService.findAll()

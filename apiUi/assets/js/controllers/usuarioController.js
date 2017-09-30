@@ -13,6 +13,13 @@ function UsuarioController(usuarioService, $location) {
         senha: ''
     };
 
+    carregarUsuario();
+
+    function carregarUsuario(){
+        vm.usuario = usuarioService.getUsuario();
+        usuarioService.setUsuario({});
+    }
+
     function returnToOrigin(){
         $location.path('/listar');
     }
