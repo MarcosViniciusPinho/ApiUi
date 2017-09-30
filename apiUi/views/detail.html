@@ -1,0 +1,33 @@
+<div class="posicionar">
+    <h3>Detalhar usuário</h3>
+    <div class="row">
+        <fieldset>
+            <legend>Informações básicas</legend>
+            <div class="col s6">
+                <div input-field>
+                    <input type="text" ng-model="usuarioCtrl.usuario.nome" disabled="disabled" placeholder="">
+                    <label>Nome</label>
+                </div>
+            </div>
+
+            <div class="col s6">
+                <div input-field>
+                    <input type="text" ng-model="usuarioCtrl.usuario.sobrenome" disabled="disabled" placeholder="">
+                    <label>Sobrenome</label>
+                </div>
+            </div>
+
+            <div class="col s6">
+                <div input-field>
+                    <input type="text" ng-model="usuarioCtrl.usuario.login" disabled="disabled" placeholder="">
+                    <label>Login</label>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="row">
+        <button class="btn-floating grey lighten-1" title="Voltar" ng-click="usuarioCtrl.back()">
+            <i class="material-icons right">undo</i>
+        </button>
+    </div>
+</div>

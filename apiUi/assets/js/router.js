@@ -9,6 +9,10 @@
             templateUrl : 'apiUi/views/form.html',
             controller: UsuarioController,
             controllerAs: 'usuarioCtrl'
+        }).when('/detalhar', {
+            templateUrl : 'apiUi/views/detail.html',
+            controller: UsuarioController,
+            controllerAs: 'usuarioCtrl'
         }).when('/listar', {
             templateUrl : 'apiUi/views/listar.html',
             controller: GridController,

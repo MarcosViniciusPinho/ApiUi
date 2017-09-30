@@ -9,9 +9,17 @@ function GridController(usuarioService, $location) {
     listar();
 
     vm.edit = function(usuario){
-        usuarioService.setUsuario(usuario);
-        $location.path('/cadastro');
+        redirectNextPage(usuario, '/cadastro');
     };
+
+    vm.detail = function(usuario){
+        redirectNextPage(usuario, '/detalhar');
+    };
+
+    function redirectNextPage(usuario, path){
+        usuarioService.setUsuario(usuario);
+        $location.path(path);
+    }
 
     function listar() {
         usuarioService.findAll()
