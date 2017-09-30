@@ -1,6 +1,6 @@
 <div class="posicionar">
     <div class="row">
-        <a class="btn pulse grey lighten-1" href="#!novo">Novo</a>
+        <a class="btn-floating pulse grey lighten-1" href="#!novo" title="Adicionar"><i class="material-icons">add</i></a>
     </div>
     <div class="row">
         <table class="centered hoverable responsive-table striped border">
@@ -17,7 +17,10 @@
                     <td>{{usuario.nome}}</td>
                     <td>{{usuario.sobrenome}}</td>
                     <td>{{usuario.login}}</td>
-                    <td></td>
+                    <td>
+                        <a class="btn-floating pulse grey lighten-1" href="#!novo" title="Editar"><i class="material-icons">edit</i></a>
+                        <a class="btn-floating pulse grey lighten-1" href="#!novo" title="Remover"><i class="material-icons">delete</i></a>
+                    </td>
                 </tr>
             </tbody>
         </table>

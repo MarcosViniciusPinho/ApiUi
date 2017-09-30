@@ -19,6 +19,13 @@
             <input type="password" ng-model="usuarioCtrl.usuario.senha" length="10" maxlength="10">
             <label>Senha</label>
         </div>
-
+    </div>
+    <div class="row">
+        <button class="btn-floating pulse grey lighten-1" type="submit" ng-click="usuarioCtrl.save()" title="Salvar">
+            <i class="material-icons right">save</i>
+        </button>
+        <button class="btn-floating grey lighten-1" title="Voltar">
+            <i class="material-icons right">undo</i>
+        </button>
     </div>
 </div>
