@@ -1,9 +1,9 @@
 angular.module('apiUi')
     .controller('usuarioCtrl', UsuarioController);
 
-UsuarioController.$inject = ['usuarioService'];
+UsuarioController.$inject = ['usuarioService', '$location'];
 
-function UsuarioController(usuarioService) {
+function UsuarioController(usuarioService, $location) {
     var vm = this;
 
     vm.usuario = {
@@ -13,13 +13,21 @@ function UsuarioController(usuarioService) {
         senha: ''
     };
 
+    function returnToOrigin(){
+        $location.path('/listar');
+    }
+
     vm.save = function () {
         usuarioService.save(vm.usuario)
             .then(saveSucess).catch(saveFailed);
     };
 
-    function saveSucess(response) {
-        //Faz algo
+    vm.back = function(){
+        returnToOrigin();
+    };
+
+    function saveSucess() {
+        returnToOrigin();
     }
 
     function saveFailed(response) {
