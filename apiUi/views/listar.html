@@ -1,6 +1,6 @@
 <div class="posicionar">
     <div class="row">
-        <a class="btn-floating pulse grey lighten-1" href="#!cadastro" title="Adicionar"><i class="material-icons">add</i></a>
+        <a class="btn-floating pulse grey lighten-1" href="#!novo" title="Adicionar"><i class="material-icons">add</i></a>
     </div>
     <div class="row">
         <table class="centered hoverable responsive-table striped border">
@@ -13,13 +13,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="usuario in gridCtrl.usuarios">
+                <tr ng-repeat="usuario in usuarioCtrl.usuarios">
                     <td>{{usuario.nome}}</td>
                     <td>{{usuario.sobrenome}}</td>
                     <td>{{usuario.login}}</td>
                     <td>
-                        <a class="btn-floating pulse grey lighten-1" ng-click="gridCtrl.detail(usuario)" title="Detalhar"><i class="material-icons">toc</i></a>
-                        <a class="btn-floating pulse grey lighten-1" ng-click="gridCtrl.edit(usuario)" title="Editar"><i class="material-icons">edit</i></a>
+                        <a class="btn-floating pulse grey lighten-1" ng-click="usuarioCtrl.detail(usuario)" title="Detalhar"><i class="material-icons">toc</i></a>
+                        <a class="btn-floating pulse grey lighten-1" href="#!edit/{{usuario.id}}" title="Editar"><i class="material-icons">edit</i></a>
                         <a class="btn-floating pulse grey lighten-1" href="#!cadastro" title="Remover"><i class="material-icons">delete</i></a>
                     </td>
                 </tr>

@@ -5,7 +5,11 @@
         .config(RouterConfig);
 
     function RouterConfig($routeProvider){
-        $routeProvider.when('/cadastro', {
+        $routeProvider.when('/novo', {
+            templateUrl : 'apiUi/views/form.html',
+            controller: UsuarioController,
+            controllerAs: 'usuarioCtrl'
+        }).when('/edit/:id', {
             templateUrl : 'apiUi/views/form.html',
             controller: UsuarioController,
             controllerAs: 'usuarioCtrl'
@@ -15,8 +19,8 @@
             controllerAs: 'usuarioCtrl'
         }).when('/listar', {
             templateUrl : 'apiUi/views/listar.html',
-            controller: GridController,
-            controllerAs: 'gridCtrl'
+            controller: UsuarioController,
+            controllerAs: 'usuarioCtrl'
         }).otherwise({
             redirectTo: '/listar'
         });
