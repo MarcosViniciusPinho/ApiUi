@@ -5,7 +5,7 @@
         .config(RouterConfig);
 
     function RouterConfig($routeProvider){
-        $routeProvider.when('/novo', {
+        $routeProvider.when('/new', {
             templateUrl : 'apiUi/views/form.html',
             controller: UsuarioController,
             controllerAs: 'usuarioCtrl'
@@ -13,16 +13,16 @@
             templateUrl : 'apiUi/views/form.html',
             controller: UsuarioController,
             controllerAs: 'usuarioCtrl'
-        }).when('/detalhar/:id', {
+        }).when('/detail/:id', {
             templateUrl : 'apiUi/views/detail.html',
             controller: UsuarioController,
             controllerAs: 'usuarioCtrl'
-        }).when('/listar', {
-            templateUrl : 'apiUi/views/listar.html',
+        }).when('/list', {
+            templateUrl : 'apiUi/views/list.html',
             controller: UsuarioController,
             controllerAs: 'usuarioCtrl'
         }).otherwise({
-            redirectTo: '/listar'
+            redirectTo: '/list'
         });
     }
 
