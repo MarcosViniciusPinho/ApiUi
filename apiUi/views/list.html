@@ -1,4 +1,9 @@
 <div class="posicionar">
+    <div input-field>
+        <input type="text" ng-model="usuarioCtrl.pesquisa">
+        <label><i class="material-icons">search</i> Pesquisar</label>
+    </div>
+
     <div class="row">
         <a class="btn-floating pulse grey lighten-1" href="#!new" title="Adicionar"><i class="material-icons">add</i></a>
     </div>
@@ -13,7 +18,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="usuario in usuarioCtrl.usuarios">
+                <tr ng-repeat="usuario in usuarioCtrl.usuarios | filter: usuarioCtrl.pesquisa">
                     <td>{{usuario.nome}}</td>
                     <td>{{usuario.sobrenome}}</td>
                     <td>{{usuario.login}}</td>

@@ -6,6 +6,8 @@ UsuarioController.$inject = ['usuarioService', '$location', '$routeParams', 'toa
 function UsuarioController(usuarioService, $location, $routeParams, toastr) {
     var vm = this;
 
+    vm.pesquisa= '';
+
     vm.usuario = {
         nome: '',
         sobrenome: '',
