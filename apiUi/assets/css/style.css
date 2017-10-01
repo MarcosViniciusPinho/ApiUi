@@ -26,6 +26,10 @@ fieldset > legend{
     text-shadow: 0px 1px 0px;
 }
 
+.character-counter{
+    margin-top: -15px;
+}
+
 h3{
     margin-top: inherit;
 }
