@@ -29,3 +29,21 @@ fieldset > legend{
 h3{
     margin-top: inherit;
 }
+
+#toast-container .toast {
+    width: 350px;
+}
+
+@media screen and (min-width: 1326px) {
+    div#toast-container.toast-top-right{
+        margin-top: -85px;
+        margin-right: -75px;
+    }
+}
+
+@media screen and (min-width: 1560px) {
+    div#toast-container.toast-top-right{
+        margin-top: -100px;
+        margin-right: -90px;
+    }
+}

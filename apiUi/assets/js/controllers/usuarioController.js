@@ -1,10 +1,17 @@
 angular.module('apiUi')
     .controller('usuarioCtrl', UsuarioController);
 
-UsuarioController.$inject = ['usuarioService', '$location', '$routeParams'];
+UsuarioController.$inject = ['usuarioService', '$location', '$routeParams', 'toastr'];
 
-function UsuarioController(usuarioService, $location, $routeParams) {
+function UsuarioController(usuarioService, $location, $routeParams, toastr) {
     var vm = this;
+
+    vm.usuario = {
+        nome: '',
+        sobrenome: '',
+        login: '',
+        senha: ''
+    };
 
     listar();
 
@@ -44,6 +51,7 @@ function UsuarioController(usuarioService, $location, $routeParams) {
     }
 
     function saveSucess() {
+        toastr.success('Operação realizada com sucesso!');
         returnToOrigin();
     }
 
@@ -60,8 +68,6 @@ function UsuarioController(usuarioService, $location, $routeParams) {
     }
 
     function throwException(response){
-        alert('Erro ao salvar o usuário: ' + '\n\nVerbo HTTP: ' + response.config.method
-            + '\nUrl consumida: ' + response.config.url
-            + '\nStatus: ' + response.xhrStatus);//TODO substituir quando estiver o toast
+        toastr.error('Houve uma falha na comunicação com o recurso da API - Status: ' + response.xhrStatus);
     }
 }
