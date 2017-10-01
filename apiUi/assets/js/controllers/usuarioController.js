@@ -7,11 +7,8 @@ function UsuarioController(usuarioService, $location, $routeParams) {
     var vm = this;
 
     listar();
-    carregarUsuario();
 
-    vm.detail = function(usuario){
-        redirectNextPage(usuario, '/detalhar');
-    };
+    carregarUsuario();
 
     vm.save = function () {
         usuarioService.saveOrUpdate(vm.usuario)
@@ -22,18 +19,20 @@ function UsuarioController(usuarioService, $location, $routeParams) {
         returnToOrigin();
     };
 
-    function redirectNextPage(usuario, path){
-        vm.usuario = usuario;
-        $location.path(path);
+    function listar() {
+        usuarioService.findAll()
+            .then(findAllSucess).catch(findAllFailed);
+    }
+
+    function carregarUsuario(){
+        if($routeParams != undefined && $routeParams.id != undefined){
+            usuarioService.getUsuario($routeParams.id)
+                .then(getUsuarioSucess).catch(getUsuarioFailed);
+        }
     }
 
     function returnToOrigin(){
         $location.path('/listar');
-    }
-
-    function listar() {
-        usuarioService.findAll()
-            .then(findAllSucess).catch(findAllFailed);
     }
 
     function findAllSucess(response) {
@@ -50,13 +49,6 @@ function UsuarioController(usuarioService, $location, $routeParams) {
 
     function saveFailed(response) {
         throwException(response);
-    }
-
-    function carregarUsuario(){
-        if($routeParams != undefined && $routeParams.id != undefined){
-            usuarioService.getUsuario($routeParams.id)
-                .then(getUsuarioSucess).catch(getUsuarioFailed);
-        }
     }
 
     function getUsuarioSucess(response) {

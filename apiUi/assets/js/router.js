@@ -13,7 +13,7 @@
             templateUrl : 'apiUi/views/form.html',
             controller: UsuarioController,
             controllerAs: 'usuarioCtrl'
-        }).when('/detalhar', {
+        }).when('/detalhar/:id', {
             templateUrl : 'apiUi/views/detail.html',
             controller: UsuarioController,
             controllerAs: 'usuarioCtrl'
