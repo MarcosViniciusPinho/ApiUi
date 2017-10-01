@@ -7,8 +7,7 @@ function UsuarioController(usuarioService, $location, $routeParams) {
     var vm = this;
 
     listar();
-
-    console.log("Id Usuario selecionado: " + $routeParams.id);
+    carregarUsuario();
 
     vm.detail = function(usuario){
         redirectNextPage(usuario, '/detalhar');
@@ -50,6 +49,21 @@ function UsuarioController(usuarioService, $location, $routeParams) {
     }
 
     function saveFailed(response) {
+        throwException(response);
+    }
+
+    function carregarUsuario(){
+        if($routeParams != undefined && $routeParams.id != undefined){
+            usuarioService.getUsuario($routeParams.id)
+                .then(getUsuarioSucess).catch(getUsuarioFailed);
+        }
+    }
+
+    function getUsuarioSucess(response) {
+        vm.usuario = response.data;
+    }
+
+    function getUsuarioFailed(response) {
         throwException(response);
     }
 

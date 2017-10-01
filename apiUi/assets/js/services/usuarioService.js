@@ -28,5 +28,9 @@
             return $http.put(recurso, usuario);
         }
 
+        vm.getUsuario = function(id){
+            return $http.get(recurso + '/' + id);
+        }
+
     }
 })();
