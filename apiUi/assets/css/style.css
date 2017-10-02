@@ -38,20 +38,30 @@ h3{
     width: 350px;
 }
 
+.handLink{
+    cursor: pointer;
+}
+
 @media screen and (min-width: 1326px) {
     div#toast-container.toast-top-right{
         margin-top: -85px;
         margin-right: -75px;
     }
-}
-
-.handLink{
-    cursor: pointer;
+    .modal{
+        margin-top: 140px;
+        width: 500px;
+        text-align: left;
+    }
 }
 
 @media screen and (min-width: 1560px) {
     div#toast-container.toast-top-right{
         margin-top: -100px;
         margin-right: -90px;
+    }
+    .modal{
+        margin-top: 200px;
+        width: 500px;
+        text-align: left;
     }
 }

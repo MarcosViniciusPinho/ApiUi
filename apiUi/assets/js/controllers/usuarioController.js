@@ -20,6 +20,10 @@ function UsuarioController(usuarioService, $location, $routeParams, toastr) {
 
     carregarUsuario();
 
+    vm.showModal = function(usuario){
+        vm.usuario = usuario;
+    };
+
     vm.orderColumn = function(column){
         vm.sortByColumn = column;
         vm.orderByColumn = !vm.orderByColumn;
