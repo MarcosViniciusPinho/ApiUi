@@ -1,6 +1,6 @@
 <div class="posicionar">
     <div input-field>
-        <input type="text" ng-model="usuarioCtrl.pesquisa">
+        <input type="text" ng-model="gridCtrl.pesquisa">
         <label><i class="material-icons">search</i> Pesquisar</label>
     </div>
 
@@ -11,27 +11,29 @@
         <table class="centered hoverable responsive-table striped border">
             <thead>
                 <tr>
-                    <th><a ng-click="usuarioCtrl.orderColumn('nome')" class="handLink">Nome</a></th>
-                    <th><a ng-click="usuarioCtrl.orderColumn('sobrenome')" class="handLink">SobreNome</a></th>
-                    <th><a ng-click="usuarioCtrl.orderColumn('login')" class="handLink">Login</a></th>
+                    <th><a ng-click="gridCtrl.orderColumn('nome')" class="handLink">Nome</a></th>
+                    <th><a ng-click="gridCtrl.orderColumn('sobrenome')" class="handLink">SobreNome</a></th>
+                    <th><a ng-click="gridCtrl.orderColumn('login')" class="handLink">Login</a></th>
                     <th>Ação</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="usuario in usuarioCtrl.usuarios | filter: usuarioCtrl.pesquisa | orderBy: usuarioCtrl.sortByColumn: usuarioCtrl.orderByColumn">
+                <tr ng-repeat="usuario in gridCtrl.usuarios | filter: gridCtrl.pesquisa | orderBy: gridCtrl.sortByColumn: gridCtrl.orderByColumn">
                     <td>{{usuario.nome}}</td>
                     <td>{{usuario.sobrenome}}</td>
                     <td>{{usuario.login}}</td>
                     <td>
                         <a class="btn-floating pulse grey lighten-1" href="#!detail/{{usuario.id}}" title="Detalhar"><i class="material-icons">toc</i></a>
                         <a class="btn-floating pulse grey lighten-1" href="#!edit/{{usuario.id}}" title="Editar"><i class="material-icons">edit</i></a>
-                        <a class="btn-floating pulse grey lighten-1" ng-click="usuarioCtrl.showModal(usuario)" data-target='modalExcluir' modal title="Remover"><i class="material-icons">delete</i></a>
+                        <a class="btn-floating pulse grey lighten-1" ng-click="gridCtrl.showModal(usuario)" data-target='modalExcluir' modal title="Remover">
+                            <i class="material-icons">delete</i>
+                        </a>
 
                         <div id="modalExcluir" class="modal">
                             <div class="modal-content">
                                 <h4>Atenção</h4>
                                 <hr />
-                                <p>Deseja excluir o usuário(a) {{usuarioCtrl.usuario.nome}}?</p>
+                                <p>Deseja excluir o usuário(a) {{gridCtrl.usuario.nome}}?</p>
                             </div>
                             <div class="modal-footer">
                                 <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Yes</a>

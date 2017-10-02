@@ -19,8 +19,8 @@
             controllerAs: 'usuarioCtrl'
         }).when('/list', {
             templateUrl : 'apiUi/views/list.html',
-            controller: UsuarioController,
-            controllerAs: 'usuarioCtrl'
+            controller: GridController,
+            controllerAs: 'gridCtrl'
         }).otherwise({
             redirectTo: '/list'
         });

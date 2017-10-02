@@ -6,9 +6,6 @@ UsuarioController.$inject = ['usuarioService', '$location', '$routeParams', 'toa
 function UsuarioController(usuarioService, $location, $routeParams, toastr) {
     var vm = this;
 
-    vm.pesquisa= '';
-    vm.orderByColumn = false;
-
     vm.usuario = {
         nome: '',
         sobrenome: '',
@@ -16,18 +13,7 @@ function UsuarioController(usuarioService, $location, $routeParams, toastr) {
         senha: ''
     };
 
-    listar();
-
     carregarUsuario();
-
-    vm.showModal = function(usuario){
-        vm.usuario = usuario;
-    };
-
-    vm.orderColumn = function(column){
-        vm.sortByColumn = column;
-        vm.orderByColumn = !vm.orderByColumn;
-    };
 
     vm.save = function () {
         usuarioService.saveOrUpdate(vm.usuario)
@@ -38,11 +24,6 @@ function UsuarioController(usuarioService, $location, $routeParams, toastr) {
         returnToOrigin();
     };
 
-    function listar() {
-        usuarioService.findAll()
-            .then(findAllSucess).catch(throwException);
-    }
-
     function carregarUsuario(){
         if($routeParams != undefined && $routeParams.id != undefined){
             usuarioService.getUsuario($routeParams.id)
@@ -52,10 +33,6 @@ function UsuarioController(usuarioService, $location, $routeParams, toastr) {
 
     function returnToOrigin(){
         $location.path('/listar');
-    }
-
-    function findAllSucess(response) {
-        vm.usuarios = response.data;
     }
 
     function saveSucess() {
