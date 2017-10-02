@@ -45,6 +45,10 @@ h3{
     }
 }
 
+.handLink{
+    cursor: pointer;
+}
+
 @media screen and (min-width: 1560px) {
     div#toast-container.toast-top-right{
         margin-top: -100px;

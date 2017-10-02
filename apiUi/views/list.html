@@ -11,14 +11,14 @@
         <table class="centered hoverable responsive-table striped border">
             <thead>
                 <tr>
-                    <th>Nome</th>
-                    <th>SobreNome</th>
-                    <th>Login</th>
+                    <th><a ng-click="usuarioCtrl.orderColumn('nome')" class="handLink">Nome</a></th>
+                    <th><a ng-click="usuarioCtrl.orderColumn('sobrenome')" class="handLink">SobreNome</a></th>
+                    <th><a ng-click="usuarioCtrl.orderColumn('login')" class="handLink">Login</a></th>
                     <th>Ação</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="usuario in usuarioCtrl.usuarios | filter: usuarioCtrl.pesquisa">
+                <tr ng-repeat="usuario in usuarioCtrl.usuarios | filter: usuarioCtrl.pesquisa | orderBy: usuarioCtrl.sortByColumn: usuarioCtrl.orderByColumn">
                     <td>{{usuario.nome}}</td>
                     <td>{{usuario.sobrenome}}</td>
                     <td>{{usuario.login}}</td>

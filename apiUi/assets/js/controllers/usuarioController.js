@@ -7,6 +7,7 @@ function UsuarioController(usuarioService, $location, $routeParams, toastr) {
     var vm = this;
 
     vm.pesquisa= '';
+    vm.orderByColumn = false;
 
     vm.usuario = {
         nome: '',
@@ -18,6 +19,11 @@ function UsuarioController(usuarioService, $location, $routeParams, toastr) {
     listar();
 
     carregarUsuario();
+
+    vm.orderColumn = function(column){
+        vm.sortByColumn = column;
+        vm.orderByColumn = !vm.orderByColumn;
+    };
 
     vm.save = function () {
         usuarioService.saveOrUpdate(vm.usuario)
