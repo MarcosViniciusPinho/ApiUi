@@ -11,8 +11,8 @@ function GridController(usuarioService, toastr) {
 
     listar();
 
-    vm.showModal = function(usuario){
-        vm.usuario = usuario;
+    vm.selecionar = function(usuario){
+      vm.usuarioSelecionado = usuario;
     };
 
     vm.orderColumn = function(column){
