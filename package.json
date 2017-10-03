@@ -1,7 +1,7 @@
 {
   "name": "apiUi",
   "version": "1.0.0",
-  "description": "Consumindo serviços da API Rest",
+  "description": "Consumindo serviços da API Rest com AngularJS",
   "author": "MarcosViniciusPinho <marcosjava2008@gmail.com>",
   "license": "ISC",
   "dependencies": {
