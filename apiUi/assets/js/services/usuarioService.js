@@ -20,16 +20,20 @@
           return usuario.id != null ? update(usuario) : save(usuario);
         };
 
+        vm.getUsuario = function(id){
+            return $http.get(recurso + '/' + id);
+        };
+
+        vm.delete = function(id){
+          return $http.delete(recurso + '/' + id);
+        };
+
         function save(usuario){
             return $http.post(recurso, usuario);
         }
 
         function update(usuario){
             return $http.put(recurso, usuario);
-        }
-
-        vm.getUsuario = function(id){
-            return $http.get(recurso + '/' + id);
         }
 
     }
