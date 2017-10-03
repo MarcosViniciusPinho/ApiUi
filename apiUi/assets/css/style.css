@@ -42,6 +42,27 @@ h3{
     cursor: pointer;
 }
 
+h4{
+    background: #bdbdbd -moz-linear-gradient(top, rgba(255,255,255,0.8), rgba(255,255,255,0));
+    border: 1px solid #a8a8a8;
+    color: #333;
+    font-weight: bold;
+    text-shadow: 0px 1px 0px rgba(255,255,255,0.7);
+}
+
+.modal-customizado-header > h4 > span{
+    margin-left: 10px;
+}
+
+.modal-customizado-body > p{
+    margin-left: 10px;
+    word-wrap: break-word;
+}
+
+.modal-footer > hr{
+    margin-top: -3px;
+}
+
 @media screen and (min-width: 1326px) {
     div#toast-container.toast-top-right{
         margin-top: -85px;
@@ -49,7 +70,7 @@ h3{
     }
     .modal{
         margin-top: 140px;
-        width: 500px;
+        width: 350px;
         text-align: left;
     }
 }
@@ -61,7 +82,7 @@ h3{
     }
     .modal{
         margin-top: 200px;
-        width: 500px;
+        width: 350px;
         text-align: left;
     }
 }

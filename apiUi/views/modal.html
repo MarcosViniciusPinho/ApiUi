@@ -1,10 +1,14 @@
 <div id="modalExcluir" class="modal">
-    <div class="modal-content">
-        <h4>Atenção</h4>
-        <hr />
+    <div class="modal-customizado-header">
+        <h4>
+            <span>Atenção</span>
+        </h4>
+    </div>
+    <div class="modal-customizado-body">
         <p>Deseja excluir este(a) usuário(a) <strong>{{$ctrl.usuario.nome}}</strong>?</p>
     </div>
     <div class="modal-footer">
+        <hr />
         <a class="modal-action modal-close waves-effect waves-green btn-flat" ng-click="$ctrl.delete()">Sim</a>
         <a class="modal-action modal-close waves-effect waves-red btn-flat">Não</a>
     </div>
