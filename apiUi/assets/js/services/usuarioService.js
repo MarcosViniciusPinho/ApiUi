@@ -5,15 +5,17 @@
         .module('apiUi')
         .service('usuarioService', UsuarioService);
 
-    UsuarioService.$inject = ['$http'];
+    UsuarioService.$inject = ['$http', '$base64'];
 
-    function UsuarioService($http) {
+    function UsuarioService($http, $base64) {
 
         var vm = this;
         var recurso = 'http://localhost:8081/api/usuarios';
 
         vm.findAll = function(){
-            return $http.get(recurso);
+            return $http.get(recurso, {
+                headers: {  'Authorization': 'Basic ' + $base64.encode('Marcos:Pinho') }
+            });
         };
 
         vm.saveOrUpdate = function(usuario){

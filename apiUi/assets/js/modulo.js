@@ -1,1 +1,1 @@
-angular.module('apiUi', ['ui.materialize', 'ngRoute', 'ngAnimate', 'toastr']);
+angular.module('apiUi', ['ui.materialize', 'ngRoute', 'ngAnimate', 'toastr', 'base64']);
